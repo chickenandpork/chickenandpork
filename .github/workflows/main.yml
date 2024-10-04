@@ -1,5 +1,6 @@
 # Visit https://github.com/lowlighter/metrics#-documentation for full reference
 name: Metrics
+# yamllint disable-line rule:truthy
 on:
   # Schedule updates (each hour)
   schedule: [{cron: "0 * * * *"}]
@@ -28,7 +29,7 @@ jobs:
           user: chickenandpork
           template: classic
           base: header, activity, community, repositories, metadata
-          commits_authoring: .user.login ${{ vars.COMMIT_EMAILS }} 
+          commits_authoring: .user.login ${{ secrets.COMMIT_EMAILS }}
           config_timezone: America/Vancouver
           plugin_habits: yes
           plugin_habits_charts_type: classic
@@ -36,20 +37,16 @@ jobs:
           plugin_habits_from: 200
           plugin_habits_languages_limit: 8
           plugin_habits_languages_threshold: 0%
+          # yamllint disable-line rule:truthy
           plugin_languages: yes
           plugin_languages_analysis_timeout: 15
           plugin_languages_analysis_timeout_repositories: 7.5
           plugin_languages_categories: markup, programming
-          plugin_languages_colors: github
           plugin_languages_limit: 8
+          # yamllint disable-line rule:truthy
+          plugin_languages_other: yes
           plugin_languages_recent_categories: markup, programming
           plugin_languages_recent_days: 14
           plugin_languages_recent_load: 300
-          plugin_languages_sections: most-used
+          plugin_languages_sections: most-used, recently-used
           plugin_languages_threshold: 0%
-          plugin_reactions: yes
-          plugin_reactions_display: absolute
-          plugin_reactions_limit: 200
-          plugin_reactions_limit_discussions: 100
-          plugin_reactions_limit_discussions_comments: 100
-          plugin_reactions_limit_issues: 100
