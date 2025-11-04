@@ -13,7 +13,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: hxreborn/metrics@7d4d44c0e63958b38deed2348b19ce98bdaa405b # lowlighter/metrics@3.34 ++
+      - uses: hxreborn/metrics@8b85719d45040854aeb8f1a676305ba65a2a9e43 # lowlighter/metrics@3.34 ++
         with:
           # Your GitHub token
           # The following scopes are required:
